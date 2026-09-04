@@ -10,11 +10,15 @@ public static void main(String[] args){
     System.out.println("=============================");
     System.out.print("Enter Selection: ");
     int select = sc.nextInt();
+    System.out.println();
 
         if(select == 1){
             Activity1 act1 = new Activity1();
             act1.userGreetings();
 
+        }else if(select == 2){
+            Activity2 act2 = new Activity2();
+            act2.cinemaTicketing();
         }else{
             System.out.println("System not Found!");
         }
