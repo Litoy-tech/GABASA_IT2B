@@ -1,5 +1,7 @@
 import java.util.Scanner;
 public static void main(String[] args){
+    int select;
+
     Scanner sc = new Scanner(System.in);
     System.out.println("=== PRORTFOLIO OF ACTIVITY ===");
     System.out.println("NAME: Angelito Gabasa");
@@ -8,10 +10,26 @@ public static void main(String[] args){
     System.out.println("1. Activity 1");
     System.out.println("2. Activity 2");
     System.out.println("=============================");
-    System.out.print("Enter Selection: ");
-    int select = sc.nextInt();
-    System.out.println();
 
+
+    while(true){
+        System.out.print("Enter Selection: ");
+
+        if (sc.hasNextInt()){
+            select = sc.nextInt();
+
+            if(select == 1 || select == 2){
+                break;
+            }else{
+                System.out.println("Invalid selection! Please enter 1 or 2.");
+            }
+        }else{
+            System.out.println("Invalid input! Please enter a number.");
+            sc.next();
+        }
+    }
+
+    System.out.println();
         if(select == 1){
             Activity1 act1 = new Activity1();
             act1.userGreetings();
